@@ -1,6 +1,8 @@
 # datamind
 In this repository, you will find all ressources related to my youtube channel named @datamind958.
 
+Youtube channel https://www.youtube.com/@datamind958/channels
+
 @datamind is a data engineering channel. We talk about data and especially data engineering 
 
 
