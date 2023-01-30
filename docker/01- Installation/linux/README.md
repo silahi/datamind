@@ -21,11 +21,13 @@ sudo apt-get install docker-ce
 
 ### 4. Utiliser la commande docker sans **sudo**
 ```shell
+
 sudo groupadd -f docker
 sudo chown root:docker /var/run/docker.sock
 sudo usermod -aG docker $USER
 newgrp docker
 sudo systemctl restart docker
+
 ```
 
 ### 6. Vérifiez que Docker est correctement installé et que la config est bien
