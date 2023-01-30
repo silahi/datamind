@@ -24,7 +24,7 @@ sudo apt-get install docker-ce
 sudo groupadd -f docker
 sudo chown root:docker /var/run/docker.sock
 sudo usermod -aG docker $USER
-newgrp grp docker
+newgrp docker
 sudo systemctl restart docker
 ```
 
