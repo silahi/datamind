@@ -1,0 +1,40 @@
+version: '3'
+services:
+    db1:
+        image: mysql
+        container_name: mysql-db
+        networks:
+          - prodnet
+        ports:
+          - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=datamind
+        volumes:
+            - mysqldata:/var/lib/mysql
+        
+    db2:
+      image: postgres
+      container_name: postgres-db
+      networks:
+       - prodnet
+      ports: 
+        - "5432:5432"
+      environment:
+        POSTGRES_USER: datamind
+        POSTGRES_PASSWORD: datamind
+        POSTGRES_DB: app_db
+    web:
+      build: .
+      container_name: my-web-App
+      networks:
+       - prodnet
+      ports:
+        - "8080:8080"
+      depends_on:
+        - db1
+
+networks: 
+  prodnet:
+    driver: bridge
+volumes:
+  mysqldata:
